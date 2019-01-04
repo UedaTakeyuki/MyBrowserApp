@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,69 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyBrowserApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Placefolder" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xtv-MP-pSC">
+                                <rect key="frame" x="10" y="30" width="355" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="URL" returnKeyType="go"/>
+                            </textField>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ukh-5l-iyT">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="←" id="Thp-Dp-B5N">
+                                        <connections>
+                                            <action selector="goBack:" destination="BYZ-38-t0r" id="KaK-rw-tXq"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="→" id="Ucb-66-5HE">
+                                        <connections>
+                                            <action selector="goForward:" destination="BYZ-38-t0r" id="OjS-SL-AjN"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="bdY-lg-NIK"/>
+                                    <barButtonItem systemItem="refresh" id="Xxg-cq-Vjw">
+                                        <connections>
+                                            <action selector="reload:" destination="BYZ-38-t0r" id="QqR-Tf-bbF"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="erv-Bj-1Dq">
+                                <rect key="frame" x="10" y="70" width="355" height="543"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="erv-Bj-1Dq" firstAttribute="top" secondItem="xtv-MP-pSC" secondAttribute="bottom" constant="10" id="0eX-vd-Q7u"/>
+                            <constraint firstItem="ukh-5l-iyT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="BgI-3h-Nwg"/>
+                            <constraint firstItem="ukh-5l-iyT" firstAttribute="top" secondItem="erv-Bj-1Dq" secondAttribute="bottom" constant="10" id="CQu-XU-h0f"/>
+                            <constraint firstItem="xtv-MP-pSC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="ENJ-Is-r0W"/>
+                            <constraint firstItem="erv-Bj-1Dq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="JrO-pg-qIZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xtv-MP-pSC" secondAttribute="trailing" constant="10" id="Lvg-Bq-EbD"/>
+                            <constraint firstItem="xtv-MP-pSC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="USv-8s-yJF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="erv-Bj-1Dq" secondAttribute="trailing" constant="10" id="jhZ-XQ-zno"/>
+                            <constraint firstItem="ukh-5l-iyT" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="mOt-Nq-Ik4"/>
+                            <constraint firstItem="ukh-5l-iyT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mwF-cz-t1Q"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="backButton" destination="Thp-Dp-B5N" id="BGJ-oI-fmM"/>
+                        <outlet property="browserWebView" destination="erv-Bj-1Dq" id="GJN-RH-MG9"/>
+                        <outlet property="forwardButton" destination="Ucb-66-5HE" id="ZpC-1x-fBI"/>
+                        <outlet property="reloadButton" destination="Xxg-cq-Vjw" id="C0k-8i-gQw"/>
+                        <outlet property="urlTextField" destination="xtv-MP-pSC" id="2A1-e3-Rdv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="300" y="-144"/>
         </scene>
     </scenes>
 </document>
