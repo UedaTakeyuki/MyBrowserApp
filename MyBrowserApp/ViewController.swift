@@ -27,13 +27,16 @@ class ViewController: UIViewController {
         let urlString = "http://dotinstall.com"
 //        let urlString = ""
         self.loadUrl(urlString: urlString)
-//        self.addBorder()
+        self.addBorder()
     }
 
-/*    func addBorder(){
-        
+    func addBorder(){
+        let topBorder = CALayer()
+        topBorder.frame = CGRect(x: 0.0, y: 0.0, width: self.browserWebView.frame.size.width, height: 1.0)
+        topBorder.backgroundColor = UIColor.lightGray.cgColor
+        self.browserWebView.layer.addSublayer(topBorder)
     }
- */
+
     func showAlert(_ message: String){
         let alertController = UIAlertController(title: "Error", message: message, preferredStyle:  .alert)
         let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil
