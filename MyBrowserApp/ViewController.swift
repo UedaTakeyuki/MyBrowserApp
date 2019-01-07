@@ -16,17 +16,24 @@ class ViewController: UIViewController, UIWebViewDelegate {
     @IBOutlet weak var forwardButton: UIBarButtonItem!
     @IBOutlet weak var reloadButton: UIBarButtonItem!
     
+    @IBOutlet weak var browserActivityIndicatorView: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.browserWebView.delegate = self
+    self.browserActivityIndicatorView.hidesWhenStopped = true
         
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
         if let urlString = self.browserWebView.request?.url?.absoluteString {
-            self.urlTextField.text = urlString
         }
+    self.browserActivityIndicatorView.stopAnimating()
+    }
+    
+    func webViewDidStartLoad(_ webView: UIWebView) {
+   self.browserActivityIndicatorView.startAnimating()
     }
     
     override func viewDidAppear(_ animated: Bool) {
