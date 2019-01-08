@@ -20,9 +20,10 @@ class ViewController: UIViewController, UIWebViewDelegate, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.browserWebView.delegate = self
         self.urlTextField.delegate = self
-    self.browserActivityIndicatorView.hidesWhenStopped = true
+        self.browserActivityIndicatorView.hidesWhenStopped = true
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -37,17 +38,19 @@ class ViewController: UIViewController, UIWebViewDelegate, UITextFieldDelegate {
         return true
     }
     
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        self.browserActivityIndicatorView.startAnimating()
+    }
+
     func webViewDidFinishLoad(_ webView: UIWebView) {
         if let urlString = self.browserWebView.request?.url?.absoluteString {
+            self.urlTextField.text = urlString
         }
         self.browserActivityIndicatorView.stopAnimating()
         self.backButton.isEnabled = self.browserWebView.canGoBack
         self.forwardButton.isEnabled = self.browserWebView.canGoForward
     }
     
-    func webViewDidStartLoad(_ webView: UIWebView) {
-   self.browserActivityIndicatorView.startAnimating()
-    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

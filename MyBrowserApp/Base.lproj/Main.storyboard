@@ -50,7 +50,7 @@
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="7nF-Yv-qmf">
-                                <rect key="frame" x="350" y="35" width="20" height="20"/>
+                                <rect key="frame" x="340" y="35" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -59,14 +59,14 @@
                             <constraint firstItem="ukh-5l-iyT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="BgI-3h-Nwg"/>
                             <constraint firstItem="ukh-5l-iyT" firstAttribute="top" secondItem="erv-Bj-1Dq" secondAttribute="bottom" constant="10" id="CQu-XU-h0f"/>
                             <constraint firstItem="xtv-MP-pSC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="ENJ-Is-r0W"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7nF-Yv-qmf" secondAttribute="trailing" constant="15" id="Fj6-QD-9xz"/>
                             <constraint firstItem="erv-Bj-1Dq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="JrO-pg-qIZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xtv-MP-pSC" secondAttribute="trailing" constant="10" id="Lvg-Bq-EbD"/>
                             <constraint firstItem="xtv-MP-pSC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="USv-8s-yJF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="erv-Bj-1Dq" secondAttribute="trailing" constant="10" id="jhZ-XQ-zno"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7nF-Yv-qmf" secondAttribute="trailing" constant="5" id="m1u-xg-h3a"/>
                             <constraint firstItem="ukh-5l-iyT" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="mOt-Nq-Ik4"/>
                             <constraint firstItem="ukh-5l-iyT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mwF-cz-t1Q"/>
-                            <constraint firstItem="7nF-Yv-qmf" firstAttribute="centerY" secondItem="xtv-MP-pSC" secondAttribute="centerY" id="pkf-Xn-xjc"/>
+                            <constraint firstItem="7nF-Yv-qmf" firstAttribute="centerY" secondItem="xtv-MP-pSC" secondAttribute="centerY" id="sHL-SW-n8S"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -81,7 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-121" y="-200"/>
+            <point key="canvasLocation" x="-122.40000000000001" y="-200.14992503748127"/>
         </scene>
     </scenes>
 </document>
