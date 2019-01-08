@@ -29,7 +29,9 @@ class ViewController: UIViewController, UIWebViewDelegate {
     func webViewDidFinishLoad(_ webView: UIWebView) {
         if let urlString = self.browserWebView.request?.url?.absoluteString {
         }
-    self.browserActivityIndicatorView.stopAnimating()
+        self.browserActivityIndicatorView.stopAnimating()
+        self.backButton.isEnabled = self.browserWebView.canGoBack
+        self.forwardButton.isEnabled = self.browserWebView.canGoForward
     }
     
     func webViewDidStartLoad(_ webView: UIWebView) {
@@ -77,12 +79,15 @@ class ViewController: UIViewController, UIWebViewDelegate {
     }
     
     @IBAction func goBack(_ sender: Any) {
+        self.browserWebView.goBack()
     }
     
     @IBAction func goForward(_ sender: Any) {
+        self.browserWebView.goForward()
     }
     
     @IBAction func reload(_ sender: Any) {
+        self.browserWebView.reload()
     }
 }
 
